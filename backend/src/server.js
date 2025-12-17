@@ -21,3 +21,8 @@ import workerRoutes from "./routes/workers.js";
 app.use("/api/workers", workerRoutes);
 import paymentRoutes from "./routes/payments.js";
 app.use("/api/payments", paymentRoutes);
+import couponRoutes from "./routes/coupons.js";
+import notificationRoutes from "./routes/notifications.js";
+
+app.use("/api/coupons", couponRoutes);
+app.use("/api/notifications", notificationRoutes);

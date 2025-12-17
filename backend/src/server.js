@@ -17,3 +17,5 @@ app.use("/api/orders", orderRoutes);
 app.listen(5000, () => console.log("Backend running on port 5000"));
 import reportRoutes from "./routes/reports.js";
 app.use("/api/reports", reportRoutes);
+import workerRoutes from "./routes/workers.js";
+app.use("/api/workers", workerRoutes);

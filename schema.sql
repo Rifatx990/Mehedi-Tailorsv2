@@ -67,3 +67,11 @@ CREATE TABLE notifications (
   is_read BOOLEAN DEFAULT false,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+CREATE TABLE invoices (
+  id SERIAL PRIMARY KEY,
+  order_id INT REFERENCES orders(id),
+  invoice_number TEXT UNIQUE,
+  total_amount NUMERIC,
+  paid_amount NUMERIC,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

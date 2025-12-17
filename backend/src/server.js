@@ -19,3 +19,5 @@ import reportRoutes from "./routes/reports.js";
 app.use("/api/reports", reportRoutes);
 import workerRoutes from "./routes/workers.js";
 app.use("/api/workers", workerRoutes);
+import paymentRoutes from "./routes/payments.js";
+app.use("/api/payments", paymentRoutes);

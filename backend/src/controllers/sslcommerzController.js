@@ -62,3 +62,16 @@ export const paymentFail = (req, res) => {
 export const paymentCancel = (req, res) => {
   res.redirect(`${process.env.FRONTEND_URL}/payment-cancelled`);
 };
+// Add to sslcommerzController.js
+export const ipnListener = async (req, res) => {
+  const { tran_id, status, amount } = req.body;
+
+  if (status === "VALID") {
+    await pool.query(
+      "UPDATE transactions SET type='payment' WHERE amount=$1",
+      [amount]
+    );
+  }
+
+  res.status(200).send("IPN received");
+};

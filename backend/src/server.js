@@ -28,3 +28,6 @@ app.use("/api/coupons", couponRoutes);
 app.use("/api/notifications", notificationRoutes);
 import sslRoutes from "./routes/sslcommerz.js";
 app.use("/api/sslcommerz", sslRoutes);
+
+import invoiceRoutes from "./routes/invoices.js";
+app.use("/api/invoices", invoiceRoutes);

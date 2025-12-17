@@ -48,3 +48,22 @@ CREATE TABLE transactions (
   amount NUMERIC,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+CREATE TABLE coupons (
+  id SERIAL PRIMARY KEY,
+  code TEXT UNIQUE,
+  discount_type TEXT CHECK (discount_type IN ('fixed','percentage')),
+  discount_value NUMERIC,
+  max_usage INT,
+  used_count INT DEFAULT 0,
+  expires_at DATE,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE notifications (
+  id SERIAL PRIMARY KEY,
+  user_id INT REFERENCES users(id),
+  title TEXT,
+  message TEXT,
+  is_read BOOLEAN DEFAULT false,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

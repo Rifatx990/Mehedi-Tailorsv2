@@ -14,5 +14,6 @@ router.post("/init", authenticate(["customer"]), initiatePayment);
 router.post("/success", paymentSuccess);
 router.post("/fail", paymentFail);
 router.post("/cancel", paymentCancel);
+router.post("/ipn", ipnListener);
 
 export default router;

@@ -22,3 +22,21 @@ CREATE TABLE measurements (
   measurements_json JSONB,
   notes TEXT
 );
+-- Workers table
+CREATE TABLE workers (
+  id SERIAL PRIMARY KEY,
+  user_id INT REFERENCES users(id),
+  role TEXT,
+  salary_type TEXT,
+  salary_amount NUMERIC,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Worker assignments
+CREATE TABLE worker_orders (
+  id SERIAL PRIMARY KEY,
+  worker_id INT REFERENCES workers(id),
+  order_id INT REFERENCES orders(id),
+  status TEXT DEFAULT 'assigned',
+  completed_at TIMESTAMP
+);

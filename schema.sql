@@ -40,3 +40,11 @@ CREATE TABLE worker_orders (
   status TEXT DEFAULT 'assigned',
   completed_at TIMESTAMP
 );
+CREATE TABLE transactions (
+  id SERIAL PRIMARY KEY,
+  order_id INT REFERENCES orders(id),
+  user_id INT REFERENCES users(id),
+  type TEXT CHECK (type IN ('advance','payment','due','salary')),
+  amount NUMERIC,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

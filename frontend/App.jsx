@@ -36,3 +36,14 @@ import Reports from "./pages/admin/Reports";
     </AdminRoute>
   }
 />
+// App.jsx
+import WorkerDashboard from "./pages/worker/WorkerDashboard";
+import WorkerRoute from "./routes/WorkerRoute";
+
+<Route path="/worker"
+  element={
+    <WorkerRoute>
+      <WorkerDashboard />
+    </WorkerRoute>
+  }
+/>

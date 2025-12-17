@@ -26,3 +26,13 @@ export default function App() {
     </BrowserRouter>
   );
 }
+// App.jsx
+import Reports from "./pages/admin/Reports";
+
+<Route path="/admin/reports"
+  element={
+    <AdminRoute>
+      <AdminLayout><Reports /></AdminLayout>
+    </AdminRoute>
+  }
+/>

@@ -11,6 +11,7 @@ export default function AdminSidebar() {
         <Link to="/admin/orders">Orders</Link>
         <Link to="/admin/users">Users</Link>
         <Link to="/admin/workers">Workers</Link>
+        <Link to="/admin/reports">Reports</Link>
       </nav>
     </aside>
   );

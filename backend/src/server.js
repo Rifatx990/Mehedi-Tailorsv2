@@ -26,3 +26,5 @@ import notificationRoutes from "./routes/notifications.js";
 
 app.use("/api/coupons", couponRoutes);
 app.use("/api/notifications", notificationRoutes);
+import sslRoutes from "./routes/sslcommerz.js";
+app.use("/api/sslcommerz", sslRoutes);
